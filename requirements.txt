@@ -6,3 +6,4 @@ pydeck
 streamlit-aggrid
 matplotlib
 wandb
+xmlsec
