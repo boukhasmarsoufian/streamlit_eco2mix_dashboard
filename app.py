@@ -174,7 +174,7 @@ def app():
     # line_fig = plt.production_line(df_selection)
     # fig_3d = plt.scatter3d(df_selection)
     multi_line_fig = plt.multiple_lines(df_selection)
-    figuree = plt.multiple_line_chart(consommation_by_year_line)
+    figuree = plt.multiple_line_chart(df_selection)
 
     ### Display figures as columns
     left_column, right_column  = st.columns(2)
