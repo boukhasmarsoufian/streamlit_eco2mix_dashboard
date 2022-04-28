@@ -174,7 +174,7 @@ def app():
     # line_fig = plt.production_line(df_selection)
     # fig_3d = plt.scatter3d(df_selection)
     multi_line_fig = plt.multiple_lines(df_selection)
-
+    figuree = plt.multiple_line_chart(consommation_by_year_line)
 
     ### Display figures as columns
     left_column, right_column  = st.columns(2)
@@ -211,6 +211,7 @@ def app():
     with container2:
 
         # container2.plotly_chart(fig_3d, use_container_width=True)
+        container2.plotly_chart(figuree, use_container_width=True)
         container2.markdown("### **Points d'injection de Biométhane en France en service**")
         plt.pydeck(df_selection2)
         container2.plotly_chart(fig2, use_container_width=True)
