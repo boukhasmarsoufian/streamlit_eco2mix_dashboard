@@ -190,7 +190,7 @@ def app():
     left_column_3.plotly_chart(fig_ech_by_year, use_container_width=False)
     right_column_3.plotly_chart(ech_fig, use_container_width=False)
 
-
+    st.plotly_chart(figuree, use_container_width=True)
     ### Display figures in a container
     container = st.container()
     with container:
