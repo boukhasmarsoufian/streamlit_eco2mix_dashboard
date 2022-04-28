@@ -194,7 +194,7 @@ def app():
     ### Display figures in a container
     container = st.container()
     with container:
-        
+        container.plotly_chart(figuree, use_container_width=True)
         container.markdown("### **La production selon les différentes filières composant le mix énergétique.**")
 
         container.plotly_chart(multi_line_fig, use_container_width=True)
@@ -211,7 +211,6 @@ def app():
     with container2:
 
         # container2.plotly_chart(fig_3d, use_container_width=True)
-        container2.plotly_chart(figuree, use_container_width=True)
         container2.markdown("### **Points d'injection de Biométhane en France en service**")
         plt.pydeck(df_selection2)
         container2.plotly_chart(fig2, use_container_width=True)
