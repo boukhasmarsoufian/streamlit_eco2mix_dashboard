@@ -181,7 +181,8 @@ def app():
     left_column.plotly_chart(fig_consommation_by_year, use_container_width=False)
     right_column.plotly_chart(fig_consommation_by_year_line, use_container_width=False)
 
-
+    st.plotly_chart(figuree, use_container_width=True)
+    
     left_column_2, right_column_2  = st.columns(2)
     left_column_2.plotly_chart(fig_co2_by_year, use_container_width=False)
     right_column_2.plotly_chart(fig_co2_pie_by_year, use_container_width=False)
@@ -190,11 +191,10 @@ def app():
     left_column_3.plotly_chart(fig_ech_by_year, use_container_width=False)
     right_column_3.plotly_chart(ech_fig, use_container_width=False)
 
-    st.plotly_chart(figuree, use_container_width=True)
+    
     ### Display figures in a container
     container = st.container()
     with container:
-        container.plotly_chart(figuree, use_container_width=True)
         container.markdown("### **La production selon les différentes filières composant le mix énergétique.**")
 
         container.plotly_chart(multi_line_fig, use_container_width=True)
