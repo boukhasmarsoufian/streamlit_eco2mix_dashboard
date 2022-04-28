@@ -67,7 +67,10 @@ def consommation_Line(df_selection):
                     mode='lines+markers',
                     name='lines+markers',
                     text=consommation_by_year_line["Consommation (MW)"]))
-
+    fig_consommation_by_year_line.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+    )
     return fig_consommation_by_year_line
 
 # Total of carbon emissions LINE
@@ -313,3 +316,16 @@ def pydeck(df_selected):
             ),
         ],
     ), use_container_width=True) 
+
+def multiple_line_chart(df):
+    consommation_by_year_line = (
+        df.groupby(by=["Month","Year"]).sum()[["Consommation (MW)"]].reset_index()
+    )
+
+    fig = px.line(consommation_by_year_line, x=consommation_by_year_line.index, y="Consommation (MW)", color="Year")
+
+    fig.update_layout(
+        plot_bgcolor="rgba(0,0,0,0)",
+        xaxis=(dict(showgrid=False))
+    )
+    return fig   
