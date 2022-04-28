@@ -171,8 +171,8 @@ def app():
     fig_co2_pie_by_year = plt.carbon_pie(df_selection)
     ech_fig = plt.carbon_bar_ech(df_selection)
     fig_ech_by_year = plt.ech_phy_bare(df_selection)
-    line_fig = plt.production_line(df_selection)
-    fig_3d = plt.scatter3d(df_selection)
+    # line_fig = plt.production_line(df_selection)
+    # fig_3d = plt.scatter3d(df_selection)
     multi_line_fig = plt.multiple_lines(df_selection)
 
 
@@ -199,7 +199,7 @@ def app():
 
         container.plotly_chart(multi_line_fig, use_container_width=True)
         
-        container.plotly_chart(line_fig, use_container_width=True)
+        # container.plotly_chart(line_fig, use_container_width=True)
         
     plt.split_coordinates(df_selection2)
     plt.ag_grid_table(df_selection2,"Date de mise en service")
@@ -210,7 +210,7 @@ def app():
     container2 = st.container()
     with container2:
 
-        container2.plotly_chart(fig_3d, use_container_width=True)
+        # container2.plotly_chart(fig_3d, use_container_width=True)
         container2.markdown("### **Points d'injection de Biométhane en France en service**")
         plt.pydeck(df_selection2)
         container2.plotly_chart(fig2, use_container_width=True)
