@@ -105,8 +105,7 @@ def app():
     season = st.sidebar.multiselect(
         "Select Season:",
         options=["winter","spring","summer","autumn"],
-        default=["winter","spring","summer","autumn"],
-        key=keys[5]
+        default=["winter","spring","summer","autumn"]
     )
 
     values, values2 = st.slider(
